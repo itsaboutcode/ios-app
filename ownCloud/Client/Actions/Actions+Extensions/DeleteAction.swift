@@ -51,16 +51,13 @@ class DeleteAction : Action {
 		let items = context.items
 
 		let message: String
+		let itemDescripton: String?
+		
 		if items.count > 1 {
 			message = "Are you sure you want to delete these items from the server?".localized
-		} else {
-			message = "Are you sure you want to delete this item from the server?".localized
-		}
-
-		let itemDescripton: String?
-		if items.count > 1 {
 			itemDescripton = "Multiple items".localized
 		} else {
+			message = "Are you sure you want to delete this item from the server?".localized
 			itemDescripton = items.first?.name
 		}
 
